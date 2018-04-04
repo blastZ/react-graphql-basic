@@ -34,7 +34,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new htmlPlugin({
       inject: true,
-      template: './dist/index.html'
+      filename: 'index.html',
+      template: './src/index.html'
     })
   ],
   devServer: {
