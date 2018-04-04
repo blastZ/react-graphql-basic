@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const  htmlPlugin = require('html-webpack-plugin');
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: [
     'react-hot-loader/patch',
     './src/index.js'
@@ -36,10 +36,15 @@ module.exports = {
       inject: true,
       filename: 'index.html',
       template: './src/index.html'
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        "NODE_ENV": JSON.stringify(argv.mode)
+      }
     })
   ],
   devServer: {
     contentBase: './dist',
     hot: true
   }
-}
+})
