@@ -1,11 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import { Home } from './components/Home';
 
-export default function Home(props) {
-  return (
-    <div>
-      <div>Home</div>
-      <Link to="/about">To about</Link>
-    </div>
-  )
+class Container extends PureComponent {
+  render() {
+    return (
+      <div className="container">
+        <Home />
+      </div>
+    )
+  }
 }
+
+const mapState = ({ homeReducer }) => ({
+
+})
+
+const mapDispatch = (dispatch) => ({
+
+})
+
+export default connect(mapState, mapDispatch)(Container);

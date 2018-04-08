@@ -12,6 +12,20 @@ module.exports = (env, argv) => ({
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        exclude: /node_modules/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
@@ -45,6 +59,8 @@ module.exports = (env, argv) => ({
   ],
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: true,
+    port: 8848,
+    historyApiFallback: true
   }
 })
