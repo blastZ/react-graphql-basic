@@ -1,15 +1,10 @@
-const initState = {
-  artist: 'blastz',
-  pictures: []
-}
+const initState = {}
 
 export const homeReducer = (state=initState, { type, payload }) => {
   switch (type) {
-    case 'DRAW_PICTURE': {
-      return {
-        ...state,
-        pictures: state.pictures.concat([payload])
-      }
+    case 'SAY_HELLO': {
+      console.log('Hello saga');
+      return state;
     }
     default: return state;
   }

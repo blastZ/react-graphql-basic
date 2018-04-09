@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './scripts/App';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, compose } from 'redux';
-import { rootReducer } from './scripts/reducers';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import './styles/main.scss';
+import createSagaMiddleware from 'redux-saga';
+import 'regenerator-runtime/runtime' //support generator api
 
+import App from './scripts/App';
+import rootReducer from './scripts/reducers';
+import './styles/main.scss';
+import rootSaga from './scripts/sagas';
+
+const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, (process.env.NODE_ENV === 'development'
-  ? composeEnhancers()
-  : compose()
+  ? composeEnhancers(
+    applyMiddleware(sagaMiddleware)
+  )
+  : compose(
+    applyMiddleware(sagaMiddleware)
+  )
 ));
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>

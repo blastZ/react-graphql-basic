@@ -7,6 +7,7 @@
 - Babel
 - React Router 4
 - Redux
+- Redux Saga
 
 ### Installation
 
