@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+.flex-container {
+  display: flex;
+}
+
 %flex-double-center-container {
   display: flex;
   align-items: center;

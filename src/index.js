@@ -30,5 +30,3 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Provider>, document.getElementById('app'));
-
-module.hot.accept();
