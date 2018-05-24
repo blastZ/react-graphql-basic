@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { asyncComponent } from './asyncComponent';
+import { asyncComponent } from './utils/asyncComponent';
 import { hot } from 'react-hot-loader';
 
 class App extends Component {

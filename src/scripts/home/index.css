@@ -1,10 +1,8 @@
-.home-container {
-  @extend %flex-double-center-container;
+:global(.home-container) {
   flex-direction: column;
 }
 
-.say-hello-button {
-  @extend .link-button;
+:global(.say-hello-button) {
   font-size: 14px;
   margin-top: 16px;
   border-radius: 5px;

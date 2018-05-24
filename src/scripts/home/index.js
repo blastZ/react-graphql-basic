@@ -1,15 +1,16 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Home } from './components/Home';
+import Home from './components/Home';
+import './index.css';
 
-class Container extends PureComponent {
+class Container extends Component {
   sayHello = () => {
-    this.props.sayHello();
+    this.props.dispatch({type: 'SAY_HELLO'});
   }
 
   render() {
     return (
-      <div className="container">
+      <div className="home-container">
         <Home
           sayHello={this.sayHello} />
       </div>
@@ -17,12 +18,9 @@ class Container extends PureComponent {
   }
 }
 
-const mapState = ({ homeReducer }) => ({
+const mapStateToProps = ({ homeReducer }) => ({
 
 })
 
-const mapDispatch = (dispatch) => ({
-  sayHello: () => dispatch({type: 'SAY_HELLO_ASYNC'})
-})
 
-export default connect(mapState, mapDispatch)(Container);
+export default connect(mapStateToProps)(Container);

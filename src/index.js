@@ -8,7 +8,7 @@ import 'regenerator-runtime/runtime' //support generator api
 
 import App from './scripts/App';
 import rootReducer from './scripts/reducers';
-import './styles/main.scss';
+import './index.css';
 import rootSaga from './scripts/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
