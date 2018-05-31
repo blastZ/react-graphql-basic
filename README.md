@@ -1,13 +1,8 @@
-## react-boilerplate
+## react-graphql-basic
 
-### Features
+### Introduction
 
-- React 16
-- Webpack 4
-- Babel
-- React Router 4
-- Redux
-- Redux Saga
+The basic example of how to use graphql in react.
 
 ### Installation
 

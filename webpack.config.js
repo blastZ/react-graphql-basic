@@ -53,7 +53,8 @@ module.exports = (env, argv) => ({
     }),
     new webpack.DefinePlugin({
       "process.env": {
-        "NODE_ENV": JSON.stringify(argv.mode)
+        "NODE_ENV": JSON.stringify(argv.mode),
+        "GITHUB_ACCESS_KEY": JSON.stringify(`7d530aa97e96c0d85aae1b9b6fb4f60155446d6a`)
       }
     })
   ],
